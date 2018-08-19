@@ -1,0 +1,7 @@
+Run a 5 second nodist test on savnw and run a 5 second simulation with a fault at some bus at 1 s.
+Compare the voltages and identify the time step where the results start changing.
+From that time step, assume that the system is able to identify the event, apply it and rerun the simulations
+So, there should be a main script which runs all the other scripts:
+	Two scripts (one for each simulation)
+	A script to compare the results and identify the time step when the event happens
+	Another script to start the simulation from that time step, with the event applied in the beginning

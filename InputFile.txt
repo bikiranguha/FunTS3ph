@@ -1,0 +1,8 @@
+rawfile = savnw.raw
+TS3ph event:
+-event01 5,EXIT,,,,,,,,,,,
+Real world event:
+-event01 1,FAULTON,ABCG,153,,,,1.0e-6,1.0e-6,1.0e-6,0.0,0.0,0.0
+-event02 1.01,FAULTOFF,ABCG,153,,,,,,,,, 
+-event03 5,EXIT,,,,,,,,,,,
+
