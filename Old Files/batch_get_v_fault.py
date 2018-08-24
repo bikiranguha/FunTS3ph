@@ -21,13 +21,13 @@ import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import seaborn as sns
 import math
-
+from input_data import RealWorldEventList, rawPath
 # Raw file, dyr file locations#####################################################   
 #rawDir = 'test_cases/PSSE/'
 #rawDir = 'test_cases/savnw/'
 #rawfile = 'pf_ornl150_1008.raw'
 #rawfile = 'savnw.raw'
-rawPath = rawDir + '/' + rawfile
+#rawPath = rawDir + '/' + rawfile
 #dyr_directory = 'test_cases/BASE_CASES'
 #model = 'pf_ornl'
 #model = 'savnw'
@@ -159,6 +159,7 @@ dyr_flag = '-ts_dyr_dir'
 ##        event3_flag = '-event03'
 ##        event3_param = '2,EXIT,,,,,,,,,,,'
 
+"""
 # Simulate a nodist case
 event1_flag = '-event01'
 event1_param = '1,FAULTON,ABCG,153,,,,1.0e-6,1.0e-6,1.0e-6,0.0,0.0,0.0'
@@ -168,7 +169,7 @@ event2_param = '1.01,FAULTOFF,ABCG,153,,,,,,,,,'
 
 event3_flag = '-event03'
 event3_param = '5,EXIT,,,,,,,,,,,'
-
+"""
 
 #run ts3ph in a stream
 print '\n'
@@ -176,7 +177,14 @@ print '\n'
 #       TS3ph_string = './TS3ph' + fault_start + fault_end + sim_exit
 #       call_string = ['./TS3ph', dyr_flag, dyr_dire, event1_flag,event1_param, event2_flag, event2_param, log_flag, log_param, sim_id_flag, sim_id_param] # first the flag, then the parameter
 #        call_string = ['./TS3ph', dyr_flag, dyr_dire] # first the flag, then the parameter
-call_string = ['./TS3ph', event1_flag, event1_param,event2_flag, event2_param, event3_flag, event3_param]
+#call_string = ['./TS3ph', event1_flag, event1_param,event2_flag, event2_param, event3_flag, event3_param]
+
+# generate the call string
+call_string = ['./TS3ph']
+for event in RealWorldEventList:
+    call_string.append(event)
+
+    
 try:
 #            result = subprocess.call(call_string, stdout=FNULL)
     result = subprocess.call(call_string, stdout = out_file)

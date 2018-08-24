@@ -1,7 +1,9 @@
-Run a 5 second nodist test on savnw and run a 5 second simulation with a fault at some bus at 1 s.
-Compare the voltages and identify the time step where the results start changing.
-From that time step, assume that the system is able to identify the event, apply it and rerun the simulations
-So, there should be a main script which runs all the other scripts:
-	Two scripts (one for each simulation)
-	A script to compare the results and identify the time step when the event happens
-	Another script to start the simulation from that time step, with the event applied in the beginning
+	Using N-1 or N-2 technique (disconnecting some branches), we can figure out which events trigger substantial voltage decrease. Based on the most severe disturbances, design a simple UVLS
+	scheme to shed some load. Once thats implemented, we can worry about parameters.
+
+	Just implement a simple UVLS technique which disconnects a certain amount of load (uniformly) throughout the system when the voltage (average over a set of HV buses)
+	fall below a certain threshold for a certain duration. Can consult MLV2000 for some reference numbers for the parameters.
+	
+	Figure out how to implement UVLS and UFLS and to tune their parameters, and see whats happening. So, lets say we see a disturbance and subsequent 
+	protection being applied, and then we keep track of the voltage and frequency and apply the schemes and see how the power system behaves. Based on the 
+	simulation on different UVLS and UFLS settings, we can figure out what are suitable parameters.

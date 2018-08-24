@@ -1,4 +1,4 @@
-rawfile = savnw.raw
+rawfile = test_cases/savnw/savnw.raw
 TS3ph event:
 -event01 5,EXIT,,,,,,,,,,,
 Real world event:
