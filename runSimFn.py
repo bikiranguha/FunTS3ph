@@ -107,7 +107,7 @@ def runSim(rawPath,EventList,TS3phOutFile):
         print 'Unable to run TS3ph'
         quit()
 
-    print "TS3ph executed succesfully"
+    #print "TS3ph executed succesfully"
 
     #load metadata
     filename = "metaout.xml"
@@ -134,9 +134,9 @@ def runSim(rawPath,EventList,TS3phOutFile):
 
     #        time = output[0][2:output_lenght - 3]   # had to delete some columns at the end because it was garbage
 
-    print "Sizes"
-    print dynsize
-    print output.shape
+    #print "Sizes"
+    #print dynsize
+    #print output.shape
 
 
 

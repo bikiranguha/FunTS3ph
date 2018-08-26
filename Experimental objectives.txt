@@ -1,3 +1,7 @@
+	Figure out how to shed load.
+	
+
+
 	Using N-1 or N-2 technique (disconnecting some branches), we can figure out which events trigger substantial voltage decrease. Based on the most severe disturbances, design a simple UVLS
 	scheme to shed some load. Once thats implemented, we can worry about parameters.
 
