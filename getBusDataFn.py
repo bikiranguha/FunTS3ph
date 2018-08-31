@@ -26,7 +26,7 @@ def getBusData(Raw):
 			if 'END OF BUS DATA' in line:   # stop if we have reached end of bus data
 				break
 		    
-			words = line.split(',')			
+			words = line.split(',')		
 			Bus = words[0].strip()
 			BusType =  words[3].strip()
 			if BusType == '4':

@@ -1,6 +1,20 @@
-	Figure out how to shed load.
+	#Verify the results of tmp_N_1PF.py. Currently it outputs the average voltage of depth 2 neighbours of the branch after its outaged. Once verified, sort the results in descending order.
+	#Extend the work to N-2 contingencies.
+	Try to analyse the voltages values using the dictionary class i created. It can give an idea of which buses consistently have low voltages and then i can isolate nearby loads.
+	After figuring out which pockets are the most sensitive, we can split the loads in those pockets into sheddable part and a non-sheddable part. 
+	After thats done, we should implement transformer outages (both ends have to be HV)
 	
+	
+	
+	#Instead of considering average voltage of all HV buses,consider the average voltage drop in HV buses within a certain depth of both sides of the branch.
+	After figuring out which pockets are the most sensitive, we can split the loads in those pockets into sheddable part and a non-sheddable part. 
+	
+	
+	Figure out how to shed load. Maybe we can run P-V sensitivity analysis to figure out shedding which load will have the most effect.
+	Test whether using power flow, we can get the same results for average voltage for line outage as we got from the TS3ph
 
+	For fun: 
+	  Try to do a PV analysis using python and PSSE. See if PSSE has a PV analysis tool. Keep increasing load and see how the voltage drops (see G:\My Drive\My PhD research\UVLS\undervoltage_loadshedding.pdf) for reference
 
 	Using N-1 or N-2 technique (disconnecting some branches), we can figure out which events trigger substantial voltage decrease. Based on the most severe disturbances, design a simple UVLS
 	scheme to shed some load. Once thats implemented, we can worry about parameters.

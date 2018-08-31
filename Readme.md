@@ -1,7 +1,7 @@
 VoltageAnalysisN_1.py: Script to carry out N-1 line outages and organize the average voltages in the 10 time steps after the event, lowest voltage first
 VoltageAnalysisN_2.py: Script to carry out N-2 line outages (which do not cause any topology inconsistencies) 
 and organize the average voltages in the 10 time steps after the event, lowest voltage first
-
+getFlows.py: # get the branch and tf flows from the bus report in descending order
 runSimFn.py: Function which executes the simulation and returns a structure containing relevant results. Currently, its only voltage magnitude and angle, but probably we will add more signals
 later on
 input_data.py: Looks at the input file and harnesses the data to be used by mainFile.py
