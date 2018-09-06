@@ -1,0 +1,8 @@
+Iteration limit exceeded: 201,202,1;201,204,1
+Iteration limit exceeded: 201,202,1;151,152,2
+Iteration limit exceeded: 201,202,1;151,152,1
+Blown up: 151,201,1;151,152,2
+Blown up: 151,201,1;151,152,1
+Converge flag = 9,Event: 3005,3006,1;153,3006,1
+Iteration limit exceeded: 151,152,2;151,152,1
+Converge flag = 9,Event: 3001,3003,1;3002,3004,1

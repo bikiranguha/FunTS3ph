@@ -141,6 +141,17 @@ for line1 in list(HVLineSet):
         # check for topology inconsistencies
         converge =  psspy.solved()
         if converge != 0: # topology inconsistencies, skip
+            if converge == 1:
+                string = 'Iteration limit exceeded: ' + key
+                print string
+            elif converge == 2:
+                string = 'Blown up: ' + key
+                print string
+            elif converge == 5:
+                string = 'Singular Jacobian matrix or voltage of 0.0 detected: ' + key
+                print string
+            else:
+                print 'Converge flag = ' + str(converge) + ',' + 'Event: ' + key
             continue
 
 
@@ -190,3 +201,5 @@ with open('N_2VMeanSorted.txt','w') as f:
     for line in outputLines:
         f.write(line)
         f.write('\n')
+
+import delete_all_pyc

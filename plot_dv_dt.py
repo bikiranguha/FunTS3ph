@@ -55,16 +55,16 @@ exitParam = '1,EXIT,,,,,,,,,,,'
 
 # one line out then a fault
 event1Flag = '-event01'
-event1Param = '0.1,OUT,LINE,201,202,,1,7,,,,,'
+event1Param = '0.1,OUT,LINE,151,201,,1,7,,,,,'
 
 event2Flag = '-event02'
-event2Param = '0.2,FAULTON,ABCG,201,,,,1.0e-6,1.0e-6,1.0e-6,0.0,0.0,0.0'
+event2Param = '0.2,FAULTON,ABCG,151,,,,1.0e-6,1.0e-6,1.0e-6,0.0,0.0,0.0'
 
 event3Flag = '-event03'
-event3Param = '0.3,FAULTOFF,ABCG,201,,,,,,,,,'
+event3Param = '0.3,FAULTOFF,ABCG,151,,,,,,,,,'
 
 event4Flag = '-event04'
-event4Param = '0.31,OUT,LINE,201,204,,1,7,,,,,'
+event4Param = '0.31,OUT,LINE,151,152,,1,7,,,,,'
 
 exitFlag = '-event05'
 exitParam = '3,EXIT,,,,,,,,,,,'
@@ -93,15 +93,39 @@ print Results[205].mag[-1]
 for Bus in list(HVBusSet):
 
 	time = Results['time']
+	# plot voltage
 	vMag = Results[int(Bus)].mag
+	
 	plt.plot(time, vMag)
 	titleStr = 'Bus ' + Bus
 	plt.title(titleStr)
-	plt.ylabel('Voltage magnitude (pu)')
+	plt.ylabel('dv/dt (pu)')
 	plt.ticklabel_format(useOffset=False)
 	plt.xlabel('Time (sec)')
 	plt.ylim(-0.1,1.5)
 	plt.grid()
 	figName = 'Bus'+ Bus+'VMag.png'
+	plt.savefig(figName)
+	plt.close()
+
+	# calculations for dv_dt
+	VmagSize = vMag.shape[0]
+	timestep = time[1] - time[0]
+	dv_dt = np.zeros(VmagSize) # initialize dv_dt array with all zeros
+	for i in range(VmagSize):
+		try:
+			dv_dt[i] = vMag[i] - vMag[i-1]
+		except: # will happen if i = 0, since there is no i-1
+			continue
+	# plot dv_dt
+	plt.plot(time, dv_dt)
+	titleStr = 'Bus ' + Bus
+	plt.title(titleStr)
+	plt.ylabel('dv/dt (pu)')
+	plt.ticklabel_format(useOffset=False)
+	plt.xlabel('Time (sec)')
+	plt.ylim(-0.6,0.6)
+	plt.grid()
+	figName = 'Bus'+ Bus+'dVDt.png'
 	plt.savefig(figName)
 	plt.close()

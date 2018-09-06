@@ -1,7 +1,27 @@
+	Start work on the voltage stability predictor:
+		Currently, the idea behind voltage instability determination is to measure how many times the voltage is going below 0.95 pu and for how long. Also, i want to measure how many 1 pu crossings 
+		(see http://qingkaikong.blogspot.com/2017/01/signal-processing-finding-periodic.html) are happening in the voltage waveform and how large the dv/dt values are getting. If the mag of the dv_dt value is exceeding a certain threshold for a given amount of time, we can classify 
+		it as oscillation.
+		First, work on time series analysis which will indicate whether the voltage is stable long term or not, by analyzing the voltage waveforms. We need to develop a metric in the long run,
+		but for now we can just have a binary output.
+		Once we can classify the output as stable or unstable, we should test some machine learning algorithms with short term voltage values as inputs and the binary stability output.
+	Start going through MPC tutorials
+	Learn how to make graphs (especially directed) with networkx. Use it to make directed graphs on a prespecified depth from a certain bus. Below are some useful tutorials:
+		https://faculty.math.illinois.edu/~hirani/cbmg/graphs.html
+		https://programminghistorian.org/en/lessons/exploring-and-analyzing-network-data-with-python
+	#Change the LVMonitor.py so that order of the lines can change, and the fault bus can also change
+
+
 	#Verify the results of tmp_N_1PF.py. Currently it outputs the average voltage of depth 2 neighbours of the branch after its outaged. Once verified, sort the results in descending order.
 	#Extend the work to N-2 contingencies.
+	#Automate a way to detect voltage collapse using TS3ph (monitor voltages) and try all sorts of simulations
+	#Implement dv_dt plotting
+	Test the cases which lead to blow up or converge problems in TS3ph. See what happens.
+	Compare PSSE vs TS3ph results for some of the events.
+	Split the load in one of the buses (maybe 205) for the event which has the lowest voltage. Initially its just a one step shed, but we should evolve to two step or three step sheds after that.
+	
+	#Separate out the contingencies which dont converge. Maybe we find something interesting there.
 	Try to analyse the voltages values using the dictionary class i created. It can give an idea of which buses consistently have low voltages and then i can isolate nearby loads.
-	After figuring out which pockets are the most sensitive, we can split the loads in those pockets into sheddable part and a non-sheddable part. 
 	After thats done, we should implement transformer outages (both ends have to be HV)
 	
 	

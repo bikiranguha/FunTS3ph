@@ -1,3 +1,2 @@
-N_2AnalysisPF.py now runs HV N-2 line contingencies using PSSE power flow and then outputs the results in ascending order wrt depth 2 neighbour average voltage
-N_1AnalysisPF.py now runs HV N-1 line contingencies using PSSE power flow and then outputs the results in ascending order wrt depth 2 neighbour average voltage
-Wrote plot_voltages and plot_angles scripts to just see the plots of an event specified in the script
+Wrote LVMonitor.py which can analyze all the N-2 contingencies (except topology issues) and list ones where voltages go abnormally low for more than 10 times.
+Wrote plot_dv_dt.py which monitors dv/dt as well as bus voltage.

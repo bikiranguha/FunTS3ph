@@ -150,3 +150,5 @@ with open('N_1VMeanSorted.txt','w') as f:
     for line in outputLines:
         f.write(line)
         f.write('\n')
+
+import delete_all_pyc
