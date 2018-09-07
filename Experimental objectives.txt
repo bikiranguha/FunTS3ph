@@ -1,4 +1,5 @@
 	Start work on the voltage stability predictor:
+		For now, the system is voltage stable if the average dv_dt value (for 10 cycles) 1 sec  after the fault is less than 0.1 and the voltage magnitude is over 0.9 pu. We can change the thresholds later.
 		Currently, the idea behind voltage instability determination is to measure how many times the voltage is going below 0.95 pu and for how long. Also, i want to measure how many 1 pu crossings 
 		(see http://qingkaikong.blogspot.com/2017/01/signal-processing-finding-periodic.html) are happening in the voltage waveform and how large the dv/dt values are getting. If the mag of the dv_dt value is exceeding a certain threshold for a given amount of time, we can classify 
 		it as oscillation.

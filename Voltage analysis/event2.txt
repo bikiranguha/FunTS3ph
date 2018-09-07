@@ -1,0 +1,83 @@
+event1Flag = '-event01'
+event1Param = '0.1,FAULTON,ABCG,151,,,,1.0e-6,1.0e-6,1.0e-6,0.0,0.0,0.0'
+
+event2Flag = '-event02'
+event2Param = '0.2,FAULTOFF,ABCG,151,,,,,,,,,'
+
+event3Flag = '-event03'
+event3Param = '0.21,OUT,LINE,151,152,,1,7,,,,,'
+
+exitFlag = '-event04'
+exitParam = '5,EXIT,,,,,,,,,,,'
+
+
+
+
+For Bus 151:
+Mean 10 cycles after 2 s: 0.0930008664413
+Min voltage value: 0.984149064199
+For Bus 153:
+Mean 10 cycles after 2 s: 0.0860456606809
+Min voltage value: 0.973388110633
+For Bus 152:
+Mean 10 cycles after 2 s: 0.0906904735008
+Min voltage value: 0.991330863565
+For Bus 154:
+Mean 10 cycles after 2 s: 0.0746285454283
+Min voltage value: 0.93827090009
+For Bus 211:
+Mean 10 cycles after 2 s: 0.0840131874096
+Min voltage value: 1.00777814205
+For Bus 3005:
+Mean 10 cycles after 2 s: 0.0779889358889
+Min voltage value: 0.987664428178
+For Bus 3004:
+Mean 10 cycles after 2 s: 0.0830296108634
+Min voltage value: 1.0045845952
+For Bus 3007:
+Mean 10 cycles after 2 s: 0.0743717521442
+Min voltage value: 0.962483280936
+For Bus 3006:
+Mean 10 cycles after 2 s: 0.0839266482962
+Min voltage value: 0.978124148255
+For Bus 3001:
+Mean 10 cycles after 2 s: 0.0709955447007
+Min voltage value: 1.02417633107
+For Bus 3003:
+Mean 10 cycles after 2 s: 0.0740729823398
+Min voltage value: 1.0171529136
+For Bus 3002:
+Mean 10 cycles after 2 s: 0.0752345316282
+Min voltage value: 1.02075322241
+For Bus 3008:
+Mean 10 cycles after 2 s: 0.0733671285953
+Min voltage value: 0.960085755161
+For Bus 201:
+Mean 10 cycles after 2 s: 0.095079344463
+Min voltage value: 1.01331441567
+For Bus 203:
+Mean 10 cycles after 2 s: 0.0815651233511
+Min voltage value: 0.956561102845
+For Bus 202:
+Mean 10 cycles after 2 s: 0.0906742869609
+Min voltage value: 0.986199068651
+For Bus 205:
+Mean 10 cycles after 2 s: 0.0744189050398
+Min voltage value: 0.948751238354
+For Bus 204:
+Mean 10 cycles after 2 s: 0.0849800458363
+Min voltage value: 0.966478291806
+For Bus 206:
+Mean 10 cycles after 2 s: 0.0641244222033
+Min voltage value: 1.03426576806
+For Bus 102:
+Mean 10 cycles after 2 s: 0.0878251027117
+Min voltage value: 1.00651515575
+For Bus 101:
+Mean 10 cycles after 2 s: 0.0878251027117
+Min voltage value: 1.00651515575
+For Bus 3018:
+Mean 10 cycles after 2 s: 0.0643100307059
+Min voltage value: 1.0370568277
+For Bus 3011:
+Mean 10 cycles after 2 s: 0.0657364099117
